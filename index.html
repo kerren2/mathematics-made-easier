@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#173b32">
+  <meta name="description" content="Clear, friendly mathematics lessons and practice for JSS1 and JSS2 students.">
+  <title>Maths Made Easy | JSS1 &amp; JSS2</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="Maths Made Easy home">
+      <span class="brand-mark" aria-hidden="true">∑</span>
+      <span>maths<span class="brand-light">made easy</span></span>
+    </a>
+    <span class="topbar-note"><span class="online-dot"></span> Your maths classroom</span>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="eyebrow-line"></span> YOUR JUNIOR SECONDARY MATHS GUIDE</p>
+        <h1>Big ideas.<br><span>Made simple.</span></h1>
+        <p class="hero-description">Build your confidence, one topic at a time. Explore your lessons, see worked examples, and practise until it clicks.</p>
+        <a class="hero-link" href="#learning">Let’s get started <span aria-hidden="true">↓</span></a>
+      </div>
+      <div class="hero-art" aria-label="Mathematical shapes illustration">
+        <div class="art-orbit orbit-one"></div>
+        <div class="art-orbit orbit-two"></div>
+        <div class="art-board">
+          <span class="art-scribble scribble-top">a² + b²</span>
+          <span class="art-main">1 <span>+</span> 1 <span class="equals">=</span> <b>2</b></span>
+          <span class="art-scribble scribble-bottom">π × r²</span>
+          <span class="art-spark spark-one">✳</span>
+          <span class="art-spark spark-two">+</span>
+          <span class="art-shape"></span>
+        </div>
+        <span class="art-caption">Curious minds<br>do great things.</span>
+      </div>
+      <div class="hero-bottom">
+        <span>01 — Learn at your own pace</span>
+        <span>02 — Practise with confidence</span>
+        <span>03 — Celebrate your progress</span>
+      </div>
+    </section>
+
+    <section class="learning-section" id="learning">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow"><span class="eyebrow-line"></span> THE LEARNING LIBRARY</p>
+          <h2>Find your next <span>“aha!”</span></h2>
+          <p class="section-description">Choose your class and jump into a topic. Every lesson comes with practice questions and answers.</p>
+        </div>
+        <div class="progress-card" aria-live="polite">
+          <span class="progress-icon" aria-hidden="true">✦</span>
+          <div><strong id="progress-count">0 topics</strong><span>completed so far</span></div>
+        </div>
+      </div>
+
+      <div class="library-tools">
+        <div class="class-tabs" role="tablist" aria-label="Select class">
+          <button class="class-tab is-active" id="tab-jss1" type="button" role="tab" aria-selected="true" aria-controls="topic-panel" data-class="JSS1">JSS1 <span id="count-jss1">0 topics</span></button>
+          <button class="class-tab" id="tab-jss2" type="button" role="tab" aria-selected="false" aria-controls="topic-panel" data-class="JSS2">JSS2 <span id="count-jss2">0 topics</span></button>
+        </div>
+        <label class="search-box">
+          <span aria-hidden="true">⌕</span>
+          <input id="topic-search" type="search" placeholder="Search a topic..." autocomplete="off" aria-label="Search topics">
+          <kbd>/</kbd>
+        </label>
+      </div>
+
+      <div class="topic-toolbar">
+        <p id="topic-summary">JSS1 curriculum</p>
+        <label class="filter-label">SHOW
+          <select id="topic-filter" aria-label="Filter topics">
+            <option value="all">All topics</option>
+            <option value="Number">Number</option>
+            <option value="Algebra">Algebra</option>
+            <option value="Geometry">Geometry &amp; measure</option>
+            <option value="Statistics">Statistics &amp; probability</option>
+          </select>
+        </label>
+      </div>
+
+      <div id="topic-panel" role="tabpanel" aria-labelledby="tab-jss1">
+        <div class="topic-grid" id="topic-grid"></div>
+        <div class="empty-state" id="empty-state" hidden>
+          <span>⌕</span>
+          <h3>No topics found</h3>
+          <p>Try a different search or filter.</p>
+        </div>
+      </div>
+
+      <p class="curriculum-note">Covers the core Nigerian junior secondary mathematics strands. Topic sequencing may vary by school or state.</p>
+    </section>
+  </main>
+
+  <footer>
+    <a class="brand footer-brand" href="#"><span class="brand-mark" aria-hidden="true">∑</span><span>maths<span class="brand-light">made easy</span></span></a>
+    <p>Small steps add up. Keep going.</p>
+    <span>JSS1 + JSS2 · Made for curious minds</span>
+  </footer>
+
+  <dialog class="lesson-dialog" id="lesson-dialog" aria-labelledby="dialog-title">
+    <div class="dialog-scroll">
+      <div class="dialog-top">
+        <span class="dialog-tag" id="dialog-tag"></span>
+        <button class="dialog-close" type="button" aria-label="Close lesson">×</button>
+      </div>
+      <h2 id="dialog-title"></h2>
+      <p class="dialog-intro" id="dialog-intro"></p>
+      <div class="example-box">
+        <span class="mini-label">LET’S WORK IT OUT</span>
+        <p id="dialog-example"></p>
+      </div>
+      <div class="practice-heading"><div><span class="mini-label">YOUR TURN</span><h3>Practice questions</h3></div><span class="practice-count">WITH ANSWERS</span></div>
+      <div class="question-list" id="question-list"></div>
+      <button class="complete-button" id="complete-button" type="button">Mark topic as complete <span aria-hidden="true">✓</span></button>
+    </div>
+  </dialog>
+  <script src="script.js"></script>
+</body>
+</html>
